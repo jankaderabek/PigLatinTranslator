@@ -4,16 +4,36 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="{$basePath}/css/style.css">
+
 	<title>{ifset title}{include title|striptags} | {/ifset}Nette Web</title>
 </head>
 
 <body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
-	{include content}
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">Pig Latin Translator</a>
+
+        <ul class="nav navbar-nav">
+        </ul>
+    </nav>
+
+    <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+    <div class="container">
+
+        <div class="starter-template">
+
+            {include content}
+
+        </div>
+
+    </div>
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
-	{/block}
+	    <script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+    {/block}
+
 </body>
 </html>
