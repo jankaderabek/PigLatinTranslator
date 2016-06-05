@@ -20,3 +20,5 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	- App\Forms\TranslatorFormFactory
+	- App\Models\PigLatinTranslator
