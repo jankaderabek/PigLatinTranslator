@@ -1,7 +1,12 @@
 body {
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
+}
+
+.translator-form textarea {
+    height: 200px;
+    max-height: 200px;
 }

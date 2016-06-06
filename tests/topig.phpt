@@ -12,37 +12,31 @@ $container = require __DIR__ . '/bootstrap.php';
 class PigTranslatorTest extends Tester\TestCase
 {
     private $container;
-    private $o;
+    private $translator;
 
     function __construct(Nette\DI\Container $container)
     {
         $this->container = $container;
-        $this->o = $this->container->createInstance(Models\PigLatinTranslator::class);
+        $this->translator = $this->container->createInstance(Models\PigLatinTranslator::class);
     }
 
     function testToPigLatin()
     {
-        Assert::same('appleay', $this->o->ToPigLatin("apple"));
+        Assert::same('appleay', $this->translator->ToPigLatin("apple"));
 
-        Assert::same('eastbay', $this->o->ToPigLatin("beast"));
-        Assert::same('estionquay', $this->o->ToPigLatin("question"));
-        Assert::same('arstay', $this->o->ToPigLatin("star"));
-        Assert::same('eethray', $this->o->ToPigLatin("three"));
+        Assert::same('eastbay', $this->translator->ToPigLatin("beast"));
+        Assert::same('estionquay', $this->translator->ToPigLatin("question"));
+        Assert::same('arstay', $this->translator->ToPigLatin("star"));
+        Assert::same('eethray', $this->translator->ToPigLatin("three"));
 
-        Assert::same('ytray', $this->o->ToPigLatin("try"));
-        Assert::same('ellowyay', $this->o->ToPigLatin("yellow"));
+        Assert::same('ytray', $this->translator->ToPigLatin("try"));
+        Assert::same('ellowyay', $this->translator->ToPigLatin("yellow"));
 
-        Assert::same('ellowyay ytray', $this->o->ToPigLatin("yellow try "));
+        Assert::same('ellowyay ytray', $this->translator->ToPigLatin("yellow try "));
 
-        Assert::same('ellowyay   eethray ytray', $this->o->ToPigLatin("yellow   three try"));
+        Assert::same('ellowyay   eethray ytray', $this->translator->ToPigLatin("yellow   three try"));
     }
 }
-$test = new PigTranslatorTest($container);
-$test->run();
 
-
-
-
-
-
-
+$translatorTest = new PigTranslatorTest($container);
+$translatorTest->run();

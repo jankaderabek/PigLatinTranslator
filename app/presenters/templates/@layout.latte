@@ -7,7 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="{$basePath}/css/style.css">
 
-	<title>{ifset title}{include title|striptags} | {/ifset}Nette Web</title>
+	<title>Pig Latin Translator</title>
 </head>
 
 <body>
@@ -22,13 +22,11 @@
     <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
     <div class="container">
-
         <div class="starter-template">
 
             {include content}
 
         </div>
-
     </div>
 
 	{block scripts}

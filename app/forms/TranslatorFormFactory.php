@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Honza
+ * User: Jan Kaderabek
  * Date: 05.06.2016
  * Time: 14:10
  */
@@ -12,20 +12,28 @@ use Nette;
 use Nette\Application\UI\Form;
 use App\Models;
 
+/**
+ * Factory for translator form
+ *
+ * @package App\Forms
+ */
 class TranslatorFormFactory
 {
-    /**
-     * @var  Models\PigLatinTranslator
-     */
+    /** @var  Models\PigLatinTranslator */
     public $pigTranslator;
 
+    /**
+     * TranslatorFormFactory constructor.
+     *
+     * @param Models\PigLatinTranslator $translator
+     */
     public function __construct(Models\PigLatinTranslator $translator)
     {
         $this->pigTranslator = $translator;
     }
 
     /**
-     * @return Form
+     * @return Form Translator form
      */
     public function create()
     {
@@ -41,6 +49,10 @@ class TranslatorFormFactory
         return $form;
     }
 
+    /**
+     * @param Form $form Processed form
+     * @param $values
+     */
     public function onSuccess(Form $form, $values)
     {
         $translated = $this->pigTranslator->ToPigLatin($values->input);

@@ -1,24 +1,30 @@
-{* This is the welcome page, you can delete it *}
-
 {block content}
 
-
 <div id="content">
-
-
     {form translatorForm}
-        <fieldset class="form-group">
-            <label for="input">English:</label>
-            {input input class => "form-control", id => "exampleTextarea", rows => "3"}
-        </fieldset>
 
-        <fieldset class="form-group">
-            <label for="output">Pig Latin:</label>
-            {input output class => "form-control", id => "exampleTextarea", rows => "3"}
-        </fieldset>
+        <div class="row translator-form">
+            <div class="col-md-6">
 
+                <div class="form-group">
+                    {input input class => "form-control", id => "exampleTextarea", rows => "3", placeholder => "English"}
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    {input output class => "form-control", id => "exampleTextarea", rows => "3", placeholder => "Pig Latin"}
+                </div>
+
+            </div>
+
+        </div>
+    <div class="row">
+        <div class="col-md-1">
         <button type="submit" class="btn btn-primary">Translate</button>
+            </div>
+        </row>
     {/form}
-
-
 </div>
