@@ -1,5 +1,3 @@
 .idea/
 vendor/
-temp/
-log/
 app/config/config.local.neon
